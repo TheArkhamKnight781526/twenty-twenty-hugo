@@ -1,0 +1,174 @@
+@import "./variables";
+
+* {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Inter Var";
+  background: $pink;
+  color: white;
+  width: 100vw;
+  min-width: 365px;
+
+  &::selection {
+    color: $pink;
+    background: white;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+header,
+footer,
+.footer-nav-widgets-wrapper,
+.has-background {
+  color: black;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $pink;
+  }
+}
+
+.post {
+  * {
+    color: white;
+  }
+}
+
+.bg-white {
+  background: white !important;
+  color: $pink !important;
+}
+
+.entry-header {
+  * {
+    color: $pink !important;
+  }
+}
+
+.entry-content,
+.widget_text p,
+.widget_text ol,
+.widget_text ul,
+.widget_text dl,
+.widget_text dt,
+.widget-content .rssSummary {
+  font-family: "Inter Var";
+}
+
+.jc-c {
+  display: flex;
+  justify-content: center;
+}
+
+#not-found {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+  flex-direction: column;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.analysis,
+.about,
+.post-preview {
+  .post-inner {
+    display: flex;
+    justify-content: center;
+
+    .entry-content {
+      width: 100%;
+      max-width: $post-text-width + 100px;
+      padding: 0 50px;
+    }
+  }
+}
+
+.space-top {
+  margin-top: 8rem !important;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.wp-block-gallery {
+  &.columns {
+    .blocks-gallery-grid {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      li {
+        width: 100%;
+
+        figure {
+          .overlay {
+            display: grid;
+            place-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 20px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+          position: relative;
+
+          img {
+            object-fit: contain;
+          }
+
+          &:hover {
+            .overlay {
+              background: rgb(8, 8, 124);
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+
+        li {
+          width: calc((100% - 16px) / 2);
+        }
+      }
+    }
+  }
+}
